@@ -47,7 +47,7 @@
   }
   
   function audioStop() {
-    for (var i = 0; i < audio.length; i++) {
+    for (var i = 0, l = audio.length; i < l; i++) {
       audio[i].pause();
       audio[i].currentTime = 0;
     }
@@ -56,25 +56,53 @@
   document.onkeypress = function note(e) {
     e = e.keyCode;
     if (e === 65 || e === 97) { //a
+      violet.classList.remove('light');
       playViolet();
+      setTimeout(function() {
+        violet.classList.add('light');
+      }, 250);
     }
     else if (e === 66 || e === 98) { //b
+      pink.classList.remove('light');
       playPink();
+      setTimeout(function() {
+        pink.classList.add('light');
+      }, 250);
     }
     else if (e === 67 || e === 99) { //c
+      red.classList.remove('light');
       playRed();
+      setTimeout(function() {
+        red.classList.add('light');
+      }, 250);
     }
     else if (e === 68 || e === 100) { //d
+      orange.classList.remove('light');
       playOrange();
+      setTimeout(function() {
+        orange.classList.add('light');
+      }, 250);
     }
     else if(e === 69 || e === 101) { //e
+      yellow.classList.remove('light');
       playYellow();
+      setTimeout(function() {
+        yellow.classList.add('light');
+      }, 250);
     }
     else if (e === 70 || e === 102) { //f
+      green.classList.remove('light');
       playGreen();
+      setTimeout(function() {
+        green.classList.add('light');
+      }, 250);
     }
     else if (e === 71 || e === 103) { //g
+      blue.classList.remove('light');
       playBlue();
+      setTimeout(function() {
+        blue.classList.add('light');
+      }, 250);
     }
   }
   

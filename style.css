@@ -20,59 +20,70 @@ div {
   border-radius:50%;
 }
 
+.light {
+  opacity:0.7;
+}
+
 #red {
   border:3px solid black;
   box-shadow:0 0 7px #fe0001;
+  background-color:#fe0001;
 }
 #red:hover {
-  background-color:#fe0001;
+  opacity:1;
 }
 
 #orange {
   border:3px solid black;
   box-shadow:0 0 7px #fd5f00;
+  background-color:#fd5f00;
 }
 #orange:hover {
-  background-color:#fd5f00;
+  opacity:1;
 }
 
 #yellow {
   border:3px solid black;
   box-shadow:0 0 7px #ffff00;
+  background-color:#ffff00;
 }
 #yellow:hover {
-  background-color:#ffff00;
+  opacity:1;
 }
 
 #green {
   border:3px solid black;
   box-shadow:0 0 7px #6fff00;
+  background-color:#6fff00;
 }
 #green:hover {
-  background-color:#6fff00;
+  opacity:1;
 }
 
 #blue {
   border:3px solid black;
   box-shadow:0 0 7px #4d4dff;
+  background-color:#4d4dff;
 }
 #blue:hover {
-  background-color:#4d4dff;
+  opacity:1;
 }
 
 #violet {
   border:3px solid black;
   box-shadow:0 0 7px #993cf3;
+  background-color:#993cf3;
 }
 #violet:hover {
-  background-color:#993cf3;
+  opacity:1;
 }
 
 #pink {
   border:3px solid black;
   box-shadow:0 0 7px #ff00ff;
+  background-color:#ff00ff;
 }
 #pink:hover {
-  background-color:#ff00ff;
+  opacity:1;
 }
 
