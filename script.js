@@ -7,7 +7,9 @@
       blue = document.getElementById("blue"),
       violet = document.getElementById("violet"),
       pink = document.getElementById("pink"),
-      audio = document.getElementsByTagName("audio");
+      audio = document.getElementsByTagName("audio"),
+      bTwinkle = document.getElementById("twinkle"),
+      bBarney = document.getElementById("barney");
       
   red.addEventListener("mouseenter", playRed, false);
   orange.addEventListener("mouseenter", playOrange, false);
@@ -16,32 +18,34 @@
   blue.addEventListener("mouseenter", playBlue, false);
   violet.addEventListener("mouseenter", playViolet, false);
   pink.addEventListener("mouseenter", playPink, false);
+  bTwinkle.addEventListener("click", twinkle, false);
+  bBarney.addEventListener("click", barney, false);
   
-  function playRed(){
+  function playRed(){ //C
     audioStop();
     audio[0].play();
   }
-  function playOrange(){
+  function playOrange(){ //D
     audioStop();
     audio[1].play();
   }
-  function playYellow(){
+  function playYellow(){ //E
     audioStop();
     audio[2].play();
   }
-  function playGreen(){
+  function playGreen(){ //F
     audioStop();
     audio[3].play();
   }
-  function playBlue(){
+  function playBlue(){ //G
     audioStop();
     audio[4].play();
   }
-  function playViolet(){
+  function playViolet(){ //A
     audioStop();
     audio[5].play();
   }
-  function playPink(){
+  function playPink(){ //B
     audioStop();
     audio[6].play();
   }
@@ -53,60 +57,101 @@
     }
   }
   
-  document.onkeypress = function note(e) {
+  document.onkeypress = function input(e) {
     e = e.keyCode;
-    if (e === 65 || e === 97) { //a
-      violet.classList.remove('light');
-      playViolet();
-      setTimeout(function() {
-        violet.classList.add('light');
-      }, 250);
-    }
-    else if (e === 66 || e === 98) { //b
-      pink.classList.remove('light');
-      playPink();
-      setTimeout(function() {
-        pink.classList.add('light');
-      }, 250);
-    }
-    else if (e === 67 || e === 99) { //c
-      red.classList.remove('light');
-      playRed();
-      setTimeout(function() {
-        red.classList.add('light');
-      }, 250);
-    }
-    else if (e === 68 || e === 100) { //d
-      orange.classList.remove('light');
-      playOrange();
-      setTimeout(function() {
-        orange.classList.add('light');
-      }, 250);
-    }
-    else if(e === 69 || e === 101) { //e
-      yellow.classList.remove('light');
-      playYellow();
-      setTimeout(function() {
-        yellow.classList.add('light');
-      }, 250);
-    }
-    else if (e === 70 || e === 102) { //f
-      green.classList.remove('light');
-      playGreen();
-      setTimeout(function() {
-        green.classList.add('light');
-      }, 250);
-    }
-    else if (e === 71 || e === 103) { //g
-      blue.classList.remove('light');
-      playBlue();
-      setTimeout(function() {
-        blue.classList.add('light');
-      }, 250);
+    note(e);
+  }
+  
+  function note(k) {
+    switch (k) {
+      case 65:
+      case 97:
+        violet.classList.remove('light');
+        playViolet();
+        setTimeout(function() {
+          violet.classList.add('light');
+        }, 250);
+      break;
+      
+      case 66:
+      case 98:
+        pink.classList.remove('light');
+        playPink();
+        setTimeout(function() {
+          pink.classList.add('light');
+        }, 250);
+      break;
+      
+      case 67:
+      case 99:
+        red.classList.remove('light');
+        playRed();
+        setTimeout(function() {
+          red.classList.add('light');
+        }, 250);
+      break;
+      
+      case 68:
+      case 100:
+        orange.classList.remove('light');
+        playOrange();
+        setTimeout(function() {
+          orange.classList.add('light');
+        }, 250);
+      break;
+      
+      case 69:
+      case 101:
+        yellow.classList.remove('light');
+        playYellow();
+        setTimeout(function() {
+          yellow.classList.add('light');
+        }, 250);
+      break;
+      
+      case 70:
+      case 102:
+        green.classList.remove('light');
+        playGreen();
+        setTimeout(function() {
+          green.classList.add('light');
+        }, 250);
+      break;
+      
+      case 71:
+      case 103:
+        blue.classList.remove('light');
+        playBlue();
+        setTimeout(function() {
+          blue.classList.add('light');
+        }, 250);
+      break;
+      default:
+      //pause
+      break;
     }
   }
   
+  function twinkle() {
+    note(67);
+    note(67);
+    note(71);
+    note(71);
+    note(65);
+    note(65);
+    note(71);
+    note();
+  }
   
+  function barney() {
+    note(71);
+    note(69);
+    note(71);
+    note();
+    note(71);
+    note(69);
+    note(71);
+  }
   
   
   

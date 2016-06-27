@@ -87,3 +87,15 @@ div {
   opacity:1;
 }
 
+button {
+  display:block;
+  margin:1% auto 0 auto;
+  padding:5px 10px;
+  font-size:20px;
+  border-radius:10px;
+  outline:none;
+}
+button:hover {
+  cursor:pointer;
+}
+
