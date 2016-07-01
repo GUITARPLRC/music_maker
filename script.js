@@ -63,6 +63,7 @@
   }
   
   function note(k) {
+    
     switch (k) {
       case 65:
       case 97:
@@ -70,7 +71,7 @@
         playViolet();
         setTimeout(function() {
           violet.classList.add('light');
-        }, 250);
+        }, 150);
       break;
       
       case 66:
@@ -79,7 +80,7 @@
         playPink();
         setTimeout(function() {
           pink.classList.add('light');
-        }, 250);
+        }, 150);
       break;
       
       case 67:
@@ -88,7 +89,7 @@
         playRed();
         setTimeout(function() {
           red.classList.add('light');
-        }, 250);
+        }, 150);
       break;
       
       case 68:
@@ -97,7 +98,7 @@
         playOrange();
         setTimeout(function() {
           orange.classList.add('light');
-        }, 250);
+        }, 150);
       break;
       
       case 69:
@@ -106,7 +107,7 @@
         playYellow();
         setTimeout(function() {
           yellow.classList.add('light');
-        }, 250);
+        }, 150);
       break;
       
       case 70:
@@ -115,7 +116,7 @@
         playGreen();
         setTimeout(function() {
           green.classList.add('light');
-        }, 250);
+        }, 150);
       break;
       
       case 71:
@@ -124,7 +125,7 @@
         playBlue();
         setTimeout(function() {
           blue.classList.add('light');
-        }, 250);
+        }, 150);
       break;
       default:
       //pause
