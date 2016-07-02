@@ -9,7 +9,7 @@ body {
 
 section {
   text-align:center;
-  margin:15% 0;
+  margin:15% 0 7% 0;
 }
 
 div {
@@ -89,7 +89,7 @@ div {
 
 button {
   display:block;
-  margin:1% auto 0 auto;
+  margin:0.5% auto 0 auto;
   padding:5px 10px;
   font-size:20px;
   border-radius:10px;
