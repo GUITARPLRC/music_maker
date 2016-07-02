@@ -134,54 +134,44 @@
   }
   
   function twinkle() {
-	  var notes = [67,67,71,71,65,65,71, ,70,70,69,69,68,68,67, ,71,71,70,70,69,69,68, ,
-		71,71,70,70,69,69,68, ,67,67,71,71,65,65,71, ,71,71,70,70,69,69,68];
-	  for (var i = 0; i < notes.length; i++) {
-			note(notes[i]);
-	  }
-	  /*
-    note(67);
-    note(67);
-    note(71);
-    note(71);
-    note(65);
-    note(65);
-    note(71);
-    note();
-	*/
+	  var notes = [67,67,71,71,65,65,71,0,70,70,69,69,68,68,67,0,71,71,70,70,69,69,68,0,
+		71,71,70,70,69,69,68,0,67,67,71,71,65,65,71,0,70,70,69,69,68,68,67];
+	  
+    var i = 0;
+    (function loop() {
+      setTimeout(function(){
+        note(notes[i]);
+        i++;
+        if(i < notes.length) {
+          loop();
+        }
+      }, 500)
+    })();
   }
   
   function barney() {
-    note(71);
-    note(69);
-    note(71);
-    note();
-    note(71);
-    note(69);
-    note(71);
+    var notes = [71,69,71,0,71,69,71,0,65,71,70,69,68,69,70,0,69,70,71,67,67,67,67,
+    67,68,69,70,71,0,71,68,68,70,69,68,67];
+    
+    var i = 0;
+    (function loop() {
+      setTimeout(function(){
+        note(notes[i]);
+        i++;
+        if(i < notes.length) {
+          loop();
+        }
+      }, 500)
+    })();
+    
   }
-  
-  
-  
-  
-  /*
-  twinkle, twinkle
-  c c g g a a g
-  f f e e d d c
-  g g f f e e d
-  g g f f e e d
-  c c g g a a g
-  f f e e d d c
-  
+   
+  /*  
   barney
   g e g   g e g
   a g f e d e f
   efg c c cccdefg
   g d d f e d c
-  
-  
-  
-  
   */
   
 })();
