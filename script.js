@@ -10,7 +10,9 @@
       audio = document.getElementsByTagName("audio"),
       bTwinkle = document.getElementById("twinkle"),
       bBarney = document.getElementById("barney");
-      
+      bSpider = document.getElementById("spider"); 
+	  bMcdonald = document.getElementById("mcdonald"); 
+	  
   red.addEventListener("mouseenter", playRed, false);
   orange.addEventListener("mouseenter", playOrange, false);
   yellow.addEventListener("mouseenter", playYellow, false);
@@ -20,6 +22,9 @@
   pink.addEventListener("mouseenter", playPink, false);
   bTwinkle.addEventListener("click", twinkle, false);
   bBarney.addEventListener("click", barney, false);
+  bSpider.addEventListener("click", spider, false);
+  bMcdonald.addEventListener("click", mcdonald, false);
+  
   
   function playRed(){ //C
     audioStop();
@@ -152,6 +157,43 @@
   function barney() {
     var notes = [71,69,71,0,71,69,71,0,65,71,70,69,68,69,70,69,70,71,67,67,67,67,
     67,68,69,70,71,0,71,68,68,70,69,68,67];
+    
+    var i = 0;
+    (function loop() {
+      setTimeout(function(){
+        note(notes[i]);
+        i++;
+        if(i < notes.length) {
+          loop();
+        }
+      }, 500)
+    })();
+    
+  }
+  
+  function spider() {
+    var notes = [71,67,67,67,68,69,69,69,68,67,68,69,67, ,69,69,70,71,71,
+	70,69,70,71,69, ,67,67,68,69,69,68,67,68,69,67, ,71,71,67,67,67,
+	68,69,69,69,68,67,68,69,67];
+    
+    var i = 0;
+    (function loop() {
+      setTimeout(function(){
+        note(notes[i]);
+        i++;
+        if(i < notes.length) {
+          loop();
+        }
+      }, 500)
+    })();
+    
+  }
+  
+  function mcdonald() {
+    var notes = [71,71,71,,68,69,69,68, ,66,66,65,65,71, ,
+	68,71,71,71,68,69,69,68, ,66,66,65,65,71, ,
+	68,68,71,71,71,68,68,71,71,71, , 71,71,71, , 71,71,71, ,
+	71,71,71,71,71,71,71,71,71,68,69,69,68, , 66,66,65,65,71];
     
     var i = 0;
     (function loop() {
