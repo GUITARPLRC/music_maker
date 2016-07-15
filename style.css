@@ -1,6 +1,7 @@
 * {
   padding:0;
   margin:0;
+  box-sizing:border-box;
 }
 
 body {
@@ -12,7 +13,7 @@ section {
   margin:15% 0 7% 0;
 }
 
-div {
+section div {
   width:100px;
   height:100px;
   display:inline-block;
@@ -87,15 +88,23 @@ div {
   opacity:1;
 }
 
+.buttons {
+  text-align:center;
+}
+
 button {
-  display:block;
-  margin:0.5% auto 0 auto;
+  color:#bbb;
+  margin-top:0.5%;
   padding:5px 10px;
   font-size:20px;
   border-radius:10px;
   outline:none;
+  border:none;
+  background-image:linear-gradient(#546156,#323D34);
 }
 button:hover {
+  color:#fff;
   cursor:pointer;
+  background-image:linear-gradient(#323D34,#546156);
 }
 

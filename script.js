@@ -11,7 +11,7 @@
       bTwinkle = document.getElementById("twinkle"),
       bBarney = document.getElementById("barney");
       bSpider = document.getElementById("spider"); 
-	  bMcdonald = document.getElementById("mcdonald"); 
+      bMcdonald = document.getElementById("mcdonald"); 
 	  
   red.addEventListener("mouseenter", playRed, false);
   orange.addEventListener("mouseenter", playOrange, false);
