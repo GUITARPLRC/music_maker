@@ -9,8 +9,7 @@
       pink = document.getElementById("pink"),
       audio = document.getElementsByTagName("audio"),
       bTwinkle = document.getElementById("twinkle"),
-      bBarney = document.getElementById("barney");
-      bSpider = document.getElementById("spider"); 
+      bBarney = document.getElementById("barney"),
       bMcdonald = document.getElementById("mcdonald"); 
 	  
   red.addEventListener("mouseenter", playRed, false);
@@ -23,7 +22,6 @@
   
   bTwinkle.addEventListener("click", twinkle, false);
   bBarney.addEventListener("click", barney, false);
-  bSpider.addEventListener("click", spider, false);
   bMcdonald.addEventListener("click", mcdonald, false);
   
   
@@ -143,20 +141,20 @@
 	  var notes = [67,67,71,71,65,65,71,0,70,70,69,69,68,68,67,0,71,71,70,70,69,69,68,0,
 		71,71,70,70,69,69,68,0,67,67,71,71,65,65,71,0,70,70,69,69,68,68,67];
 	  
-    var i = 0;
+    var i = -1;
     (function loop() {
       setTimeout(function(){
         note(notes[i]);
-        i++;
         if(i < notes.length) {
           loop();
         }
-      }, 500)
+      }, 500);
+      i++;
     })();
   }
   
   function barney() {
-    var notes = [[71,500],[69,500],[71,1000],[71,500],[69,500],[71,1000],[65,500],[71,500],
+    var notes = [[0,0],[71,500],[69,500],[71,1000],[71,500],[69,500],[71,1000],[65,500],[71,500],
     [70,500],[69,500],[68,500],[69,500],[70,500],[69,250],[70,250],[71,500],[67,500],[67,500],[67,250],[67,250],
     [67,250],[68,250],[69,250],[70,250],[71,1000],[71,500],[68,500],[68,500],[70,500],[69,500],[68,500],[67,500]];
     
@@ -167,32 +165,14 @@
         if(i < notes.length) {
           loop();
         }
-      }, notes[i][1])
+      }, notes[i][1]);
       i++;
     })();
     
   }
   
-  function spider() {
-    var notes = [71,67,67,67,68,69,69,69,68,67,68,69,67,0,69,69,70,71,71,
-	70,69,70,71,69,0,67,67,68,69,69,68,67,68,69,67,0,71,71,67,67,67,
-	68,69,69,69,68,67,68,69,67];
-    
-    var i = 0;
-    (function loop() {
-      setTimeout(function(){
-        note(notes[i]);
-        i++;
-        if(i < notes.length) {
-          loop();
-        }
-      }, 500)
-    })();
-    
-  }
-  
   function mcdonald() {
-    var notes = [[71,500],[71,500],[71,500],[68,500],[69,500],[69,500],[68,1000],
+    var notes = [[0,0],[71,500],[71,500],[71,500],[68,500],[69,500],[69,500],[68,1000],
     [66,500],[66,500],[65,500],[65,500],[71,1000],[68,500],[71,500],[71,500],[71,500],
     [68,500],[69,500],[69,500],[68,1000],[66,500],[66,500],[65,500],[65,500],[71,1000],
     [68,250],[68,250],[71,500],[71,500],[71,500],[68,250],[68,250],[71,500],[71,500],
@@ -208,7 +188,7 @@
         if(i < notes.length) {
           loop();
         }
-      }, notes[i][1])
+      }, notes[i][1]);
       i++;
     })();
     
@@ -223,12 +203,6 @@
   g = 71
   a = 65
   b = 66
-  
-  barney
-  g e g   g e g
-  a g f e d e f
-  efg c c cccdefg
-  g d d f e d c
   */
   
 })();
