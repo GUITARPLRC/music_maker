@@ -1,208 +1,85 @@
-(function(){
+var channels = ['ESL_SC2', 'OgamingSC2', 'cretetion', 'freecodecamp', 'storbeck', 'habathcx', 'comster404', 'RobotCaleb', 'brunofin', 'noobs2ninjas'],
+		main = document.getElementById('main');
+
+function getInfo(a) {
   
-  var red = document.getElementById("red"),
-      orange = document.getElementById("orange"),
-      yellow = document.getElementById("yellow"),
-      green = document.getElementById("green"),
-      blue = document.getElementById("blue"),
-      violet = document.getElementById("violet"),
-      pink = document.getElementById("pink"),
-      audio = document.getElementsByTagName("audio"),
-      bTwinkle = document.getElementById("twinkle"),
-      bBarney = document.getElementById("barney"),
-      bMcdonald = document.getElementById("mcdonald"); 
-	  
-  red.addEventListener("mouseenter", playRed, false);
-  orange.addEventListener("mouseenter", playOrange, false);
-  yellow.addEventListener("mouseenter", playYellow, false);
-  green.addEventListener("mouseenter", playGreen, false);
-  blue.addEventListener("mouseenter", playBlue, false);
-  violet.addEventListener("mouseenter", playViolet, false);
-  pink.addEventListener("mouseenter", playPink, false);
+  var anchor = document.createElement('a'),
+      div = document.createElement('div'),
+      image = document.createElement('img'),
+      name = document.createElement('h3'),
+      game = document.createElement('h4'),
+      description = document.createElement('p');
+	
+	anchor.setAttribute('target', '_blank')
   
-  bTwinkle.addEventListener("click", twinkle, false);
-  bBarney.addEventListener("click", barney, false);
-  bMcdonald.addEventListener("click", mcdonald, false);
-  
-  
-  function playRed(){ //C
-    audioStop();
-    audio[0].play();
+  while(main.firstChild) {
+    main.removeChild(main.firstChild);
   }
-  function playOrange(){ //D
-    audioStop();
-    audio[1].play();
-  }
-  function playYellow(){ //E
-    audioStop();
-    audio[2].play();
-  }
-  function playGreen(){ //F
-    audioStop();
-    audio[3].play();
-  }
-  function playBlue(){ //G
-    audioStop();
-    audio[4].play();
-  }
-  function playViolet(){ //A
-    audioStop();
-    audio[5].play();
-  }
-  function playPink(){ //B
-    audioStop();
-    audio[6].play();
-  }
-  
-  function audioStop() {
-    for (var i = 0, l = audio.length; i < l; i++) {
-      audio[i].pause();
-      audio[i].currentTime = 0;
-    }
-  }
-  
-  document.onkeypress = function input(e) {
-    e = e.keyCode;
-    note(e);
-  }
-  
-  function note(k) {
-    
-    switch (k) {
-      case 65:
-      case 97:
-        violet.classList.remove('light');
-        playViolet();
-        setTimeout(function() {
-          violet.classList.add('light');
-        }, 150);
-      break;
-      
-      case 66:
-      case 98:
-        pink.classList.remove('light');
-        playPink();
-        setTimeout(function() {
-          pink.classList.add('light');
-        }, 150);
-      break;
-      
-      case 67:
-      case 99:
-        red.classList.remove('light');
-        playRed();
-        setTimeout(function() {
-          red.classList.add('light');
-        }, 150);
-      break;
-      
-      case 68:
-      case 100:
-        orange.classList.remove('light');
-        playOrange();
-        setTimeout(function() {
-          orange.classList.add('light');
-        }, 150);
-      break;
-      
-      case 69:
-      case 101:
-        yellow.classList.remove('light');
-        playYellow();
-        setTimeout(function() {
-          yellow.classList.add('light');
-        }, 150);
-      break;
-      
-      case 70:
-      case 102:
-        green.classList.remove('light');
-        playGreen();
-        setTimeout(function() {
-          green.classList.add('light');
-        }, 150);
-      break;
-      
-      case 71:
-      case 103:
-        blue.classList.remove('light');
-        playBlue();
-        setTimeout(function() {
-          blue.classList.add('light');
-        }, 150);
-      break;
-      default:
-      //pause
-      break;
-    }
-  }
-  
-  function twinkle() {
-	  var notes = [67,67,71,71,65,65,71,0,70,70,69,69,68,68,67,0,71,71,70,70,69,69,68,0,
-		71,71,70,70,69,69,68,0,67,67,71,71,65,65,71,0,70,70,69,69,68,68,67];
-	  
-    var i = -1;
-    (function loop() {
-      setTimeout(function(){
-        note(notes[i]);
-        if(i < notes.length) {
-          loop();
-        }
-      }, 500);
-      i++;
-    })();
-  }
-  
-  function barney() {
-    var notes = [[0,0],[71,500],[69,500],[71,1000],[71,500],[69,500],[71,1000],[65,500],[71,500],
-    [70,500],[69,500],[68,500],[69,500],[70,500],[69,250],[70,250],[71,500],[67,500],[67,500],[67,250],[67,250],
-    [67,250],[68,250],[69,250],[70,250],[71,1000],[71,500],[68,500],[68,500],[70,500],[69,500],[68,500],[67,500]];
-    
-    var i = 0;
-    (function loop() {
-      setTimeout(function(){
-        note(notes[i][0]);
-        if(i < notes.length) {
-          loop();
-        }
-      }, notes[i][1]);
-      i++;
-    })();
-    
-  }
-  
-  function mcdonald() {
-    var notes = [[0,0],[71,500],[71,500],[71,500],[68,500],[69,500],[69,500],[68,1000],
-    [66,500],[66,500],[65,500],[65,500],[71,1000],[68,500],[71,500],[71,500],[71,500],
-    [68,500],[69,500],[69,500],[68,1000],[66,500],[66,500],[65,500],[65,500],[71,1000],
-    [68,250],[68,250],[71,500],[71,500],[71,500],[68,250],[68,250],[71,500],[71,500],
-    [71,1000],[71,250],[71,250],[71,500],[71,250],[71,250],[71,500],
-    [71,250],[71,250],[71,250],[71,250],[71,500],[71,500],[71,500],[71,500],
-    [71,500],[68,500],[69,500],[69,500],[68,1000],[66,500],[66,500],[65,500],
-    [65,500],[71,1000]];
-    
-    var i = 0;
-    (function loop() {
-      setTimeout(function(){
-        note(notes[i][0]);
-        if(i < notes.length) {
-          loop();
-        }
-      }, notes[i][1]);
-      i++;
-    })();
-    
-  }
+	
    
-  /*  
-  note-key reference
-  c = 67
-  d = 68
-  e = 69
-  f = 70
-  g = 71
-  a = 65
-  b = 66
-  */
+  var request = $.ajax({
+    method: 'GET',
+    url: 'https://api.twitch.tv/kraken/streams/' + a,
+		dataType: 'json',
+    headers: {
+       'Client-ID': '82g0c4vl8dda4q11grwws763oxlpdk0'
+     }
+	});
+	request.done(function(data) {
+     
+			if (data.stream !== null) {
+
+				anchor.setAttribute('href', data.stream.channel.url);
+				image.src = data.stream.channel.logo;
+				name.textContent = data.stream.channel.display_name;
+				game.textContent = data.stream.game;
+				description.textContent = data.stream.channel.status;
+
+				div.appendChild(image);
+				div.appendChild(name);
+				div.appendChild(game);
+				div.appendChild(description);
+				div.classList.add('online');
+				anchor.appendChild(div);
+
+				main.insertBefore(anchor, main.firstChild);
+
+			} else {
+
+				name.textContent = a;
+				description.textContent = 'OFFLINE';
+
+				div.appendChild(name); 
+				div.appendChild(description);
+				div.classList.add('offline');
+
+				main.appendChild(div);
+
+			}
+    
+  	}); //end success/done
+		request.fail(function() { //if fail locating profile = closed account
+    
+        name.textContent = a;
+        description.textContent = 'ACCOUNT CLOSED';
+
+        div.appendChild(name);
+				div.appendChild(description);
+        div.classList.add('offline');
+
+        main.appendChild(div);
+      
+    });// end fail
+} // end getInfo
+	
+function init() {
+
+  for (var i = 0; i < channels.length; i++) {
+    
+    var channel = channels[i];
+  	getInfo(channel);
   
-})();
+  }
+} // end init
+
+init();
